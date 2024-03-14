@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoPage</title>
+    <style>
+        body{
+            font-family: Helvetica, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        header.feature-box.right{
+            background-color: #e2e5e8;
+            color:white;
+            height: 100px;
+            padding: 5px;
+            text-align: right;
+            background-image:url('https://hcmut.edu.vn/img/nhanDienThuongHieu/bk_name_en.png');
+            background-size:40%;
+            background-repeat: no-repeat;
+            background-position:middle left;
+        }
+        ul{
+        list-style:none;
+        padding:0px;}
+        li{
+        display:inline-block;
+        background-color:#3c86b0;
+        border-radius:10px;
+        padding:10px;
+        margin:10px;
+        }
+        header a{
+        color:white;
+        text-decoration:none;
+        width:100%;
+        }
+        body{
+            color:white;
+            margin:0px;
+            padding:0px;
+        }
+        header.feature-box.first{
+        background-color:#3c86b0;
+        height:80px;
+        margin:0px;
+        padding:20px;
+        text-align:center;
+        }
+        section.col-sm{
+          background-color:black;
+          width: 900px;
+          height: 600px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:auto;
+          margin-bottom: -10px;
+         
+          
+        }
+        img{
+          width: 900px;
+          height: 580px;
+          border-radius: 10px;
+          object-fit: contain;
+          /* margin-left: auto;
+          margin-right: auto; */
+          margin-top: 10px;
+          
+        }
+        .new{
+        color:black;
+        margin-top:10px;
+        padding:10px;
+        background-color:#3c86b0;
+        
+        }
+    </style>
+</head>
+<body>
+    <header class="feature-box right">
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/VideoPage">Video</a></li>
+                <li><a href="/webcam">LiveCamera</a></li> 
+            </ul> 
+               
+        </nav>
+    </header>
+    <header class="feature-box first">
+        <h1><strong>Bottle Detection using YOLOv8 - Video Output</strong></h1>
+    </header>
+    <section class="col-sm " >
+        <img src="{{ url_for('video') }}"   alt="Upload video">
+
+</section>
+<section>
+  <div class="new" >
+    <form method = 'POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">
+      {{form.hidden_tag()}}
+      {{form.file(class_="custom-file-input")}}
+
+      <div>
+      <button type="submit" name="favorite" value="x" class="btnCustom">
+          Submit
+      </button>
+    </div>
+    </form>
+  </div>
+
+</div>
+  </section>
+</body>
+</html>
